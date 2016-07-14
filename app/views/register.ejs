@@ -5,15 +5,28 @@
         <%=title %>
     </title>
 
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
 </head>
 <body>
     <% for(var i in messages) { %>
     <div class="flash"><%= messages[i] %></div>
     <% } %>
 
-    <div class="container">
+    <div class="content">
+     <form class="form-signin" action="/register" method="post">
+  <div class="title">Create account</div>
+  <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+  <input type="text" id="name" name="name" class="form-control" placeholder="Name" required autofocus>
+   <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" required>
+    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+ 
+ 
+  <button type="submit">Create Account</button>
+  </form>
+  
+
+   <!--  <div class="container">
         <form class="form-signin" action="/register" method="post">
             <h2 class="form-signin-heading text-center">Register</h2>
 
@@ -38,6 +51,6 @@
                 <a href="/oauth/twitter">Login with Twitter</a>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 </html>

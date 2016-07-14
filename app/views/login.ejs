@@ -5,9 +5,10 @@
         <%=title %>
     </title>
 
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
 </head>
+
 <body>
     <% for(var i in messages) { %>
         <div class="flash">
@@ -15,7 +16,26 @@
         </div>
     <% } %>
 
-    <div class="container">
+    <div class="content">
+     <form class="form-signin" action="/login" method="post">
+  <div class="title">Log in</div>
+  <input type="text" name="username" id="username" placeholder="Username" required autofocus>
+  <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+ 
+ 
+  <button type="submit">Log In</button>
+  </form>
+  <div class="social"> <span>or sign in with social media</span></div>
+  <div class="buttons">
+    <form class="form-signin" action="/oauth/facebook" method="get">
+    <button class="facebook" onClick="window.navigate('/oauth/facebook')"><i class="fa fa-facebook"></i>Facebook</button> <form>
+    <button class="twitter"><i class="fa fa-twitter"></i>Twitter</button>
+    <button class="google"><i class="fa fa-google-plus"></i>Google</button>
+  </div>
+  <div class="already">Already have an account? <a href="/register">Sign up</a></div>
+</div>
+
+    <!-- <div class="container">
         <form class="form-signin" action="/login" method="post">
             <h2 class="form-signin-heading text-center">Open, says me</h2>
 
@@ -34,6 +54,6 @@
                 <a href="/oauth/twitter">Login with Twitter</a>
             </div>
         </div>
-    </div>
+   </div> -->
 </body>
 </html>
